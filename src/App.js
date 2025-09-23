@@ -13,7 +13,7 @@ function XDictionary() {
   const [searchTerm, setSearchTerm] = useState("");
   const [result, setResult] = useState(""); 
 
-  
+
   const handleSearch = () => {
     const trimmed = searchTerm.trim();
     if (trimmed === "") {
@@ -36,7 +36,7 @@ function XDictionary() {
 
   return (
     <div>
-      <h1>XDictionary</h1>
+      <h1>Dictionary App</h1>
 
       <input
         type="text"
