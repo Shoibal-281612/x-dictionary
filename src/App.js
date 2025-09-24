@@ -47,16 +47,16 @@ function XDictionary() {
       <button onClick={handleSearch}>Search</button>
 
       {/* Only show definition or “not found” after Search pressed */}
-       <h3>Definition:</h3>
+      
       {result !== "" && (
         <div>
           {/* If result is exactly the meaning (i.e. found), show Definition: */}
-          {result === "" ? (
-    <p>Please search for a word.</p>
-  ) : (
-    <p>{result}</p>
-  ) 
-}
+          <h3>Definition:</h3>
+  <p>
+    {result === ""
+      ? "Word not found in the dictionary."
+      : result}
+  </p>
         </div>
       )}
     </div>
