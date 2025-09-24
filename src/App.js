@@ -53,11 +53,10 @@ function XDictionary() {
           {/* If result is exactly the meaning (i.e. found), show Definition: */}
           {result === "" ? (
     <p>Please search for a word.</p>
-  ) : result === "Word not found in the dictionary." ? (
-    <p>{result}</p>
   ) : (
     <p>{result}</p>
-  )}
+  ) 
+}
         </div>
       )}
     </div>
