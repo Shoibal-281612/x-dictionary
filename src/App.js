@@ -11,7 +11,7 @@ function XDictionary() {
   ]);
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [definition, setDefinition] = useState(""); 
+  const [result, setResult] = useState(""); 
 
 
   const handleSearch = () => {
@@ -28,9 +28,9 @@ function XDictionary() {
     );
 
     if (found) {
-      setDefinition(found.meaning);
+      setResult(found.meaning);
     } else {
-      setDefinition("Word not found in the dictionary.");
+      setResult("Word not found in the dictionary.");
     }
   };
 
@@ -47,15 +47,15 @@ function XDictionary() {
       <button onClick={handleSearch}>Search</button>
 
       {/* Only show definition or “not found” after Search pressed */}
-      {definition !== "" && (
+      {result !== "" && (
         <div>
           {/* If result is exactly the meaning (i.e. found), show Definition: */}
-          {definition === "Word not found in the dictionary." ? (
-            <p>{definition}</p>
+          {result === "Word not found in the dictionary." ? (
+            <p>{result}</p>
           ) : (
             <>
               <h3>Definition:</h3>
-              <p>{definition}</p>
+              <p>{result}</p>
             </>
           )}
         </div>
