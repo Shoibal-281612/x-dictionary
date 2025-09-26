@@ -11,18 +11,18 @@ function XDictionary() {
   ]);
 
   const [searchTerm, setSearchTerm] = useState("");
-  const [result, setResult] = useState(""); 
-
+  const [result, setResult] = useState("");
 
   const handleSearch = () => {
     const trimmed = searchTerm.trim();
+
+    // ✅ If input is empty, immediately show "Word not found..."
     if (trimmed === "") {
-      // If search term is empty or just whitespace, you might want to clear result
-      setResult("");
+      setResult("Word not found in the dictionary.");
       return;
     }
 
-    // Case-insensitive search
+    // Case-insensitive match
     const found = dictionary.find(
       (entry) => entry.word.toLowerCase() === trimmed.toLowerCase()
     );
@@ -46,19 +46,11 @@ function XDictionary() {
       />
       <button onClick={handleSearch}>Search</button>
 
-      {/* Only show definition or “not found” after Search pressed */}
-        <h3>Definition:</h3>
-      {result !== "" && (
+      {/* ✅ Show Definition label only when we have a result */}
+      {result && (
         <div>
-        
-          {/* If result is exactly the meaning (i.e. found), show Definition: */}
-          {result === "Word not found in the dictionary." ? (
-            <p>{result}</p>
-          ) : (
-            <>
-              <p>{result}</p>
-            </>
-          )}
+          <h3>Definition:</h3>
+          <p>{result}</p>
         </div>
       )}
     </div>
