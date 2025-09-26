@@ -45,11 +45,10 @@ function XDictionary() {
         placeholder="Enter word to search"
       />
       <button onClick={handleSearch}>Search</button>
-
+<h3>Definition:</h3>
       {/* ✅ Show Definition label only when we have a result */}
       {result && (
         <div>
-          <h3>Definition:</h3>
           <p>{result}</p>
         </div>
       )}
